@@ -2,36 +2,37 @@
 # yarn lockfile v1
 
 
-"@acala-network/api-derive@^0.2.0-beta.55":
-  version "0.2.0-beta.55"
-  resolved "https://registry.yarnpkg.com/@acala-network/api-derive/-/api-derive-0.2.0-beta.55.tgz#cef99388b1781b0f2f7b57acba4d415dcf3b73fb"
-  integrity sha512-p53asUIV0E8eX/NDuYNJlJOuZP5I2YLrmTMdM618DKvbZ03uXmV8xRTTo7GMw9s1W6k02wR+OnCmdMGGBZZciA==
+"@acala-network/api-derive@^0.2.0-beta.58":
+  version "0.2.0-beta.58"
+  resolved "https://registry.yarnpkg.com/@acala-network/api-derive/-/api-derive-0.2.0-beta.58.tgz#a88ded4c0d93be07cb35516e19876dbe0e9399ba"
+  integrity sha512-ECexVKXVxmfDlLyeG3NipxOEGnVVZ/4x3UgAW6l4ewvI1fjX6XAJFp6R5waOgM27B1UJZTsnfcER+kulAJguVw==
   dependencies:
-    "@acala-network/types" "^0.2.0-beta.55"
+    "@acala-network/types" "^0.2.0-beta.58"
     "@babel/runtime" "^7.10.2"
     "@polkadot/rpc-core" "^1.18.1"
     memoizee "^0.4.14"
     rxjs "^6.5.5"
 
-"@acala-network/api@^0.2.0-beta.55":
-  version "0.2.0-beta.55"
-  resolved "https://registry.yarnpkg.com/@acala-network/api/-/api-0.2.0-beta.55.tgz#cadb3bf8cac70921d3738c7bec0d01dab03f0c81"
-  integrity sha512-u9s3SILLySqsEIrPOXyfdxdSKxnZ6u2E+fd5Pg9Pql0l/yyP1WlXH4h8HY0KMl528t048c+5LsTHjJvvbTnC/w==
+"@acala-network/api@^0.2.0-beta.58":
+  version "0.2.0-beta.58"
+  resolved "https://registry.yarnpkg.com/@acala-network/api/-/api-0.2.0-beta.58.tgz#063b20573cfef20eebde9d8a3d7c921f0d5c0498"
+  integrity sha512-Ca4c50bZcCeec7NX5QwFsDmmxg6QeRfjWC3EdkbTSchpjxJomQmyUoHpiVhQmk2kSQBS+04KGgtezmYPTlHkaQ==
   dependencies:
-    "@acala-network/api-derive" "^0.2.0-beta.55"
-    "@acala-network/types" "^0.2.0-beta.55"
+    "@acala-network/api-derive" "^0.2.0-beta.58"
+    "@acala-network/types" "^0.2.0-beta.58"
     "@babel/runtime" "^7.10.2"
     "@open-web3/orml-api-derive" "^0.3.0-beta.19"
     "@polkadot/api" "^1.18.1"
     "@polkadot/rpc-core" "^1.18.1"
 
-"@acala-network/types@^0.2.0-beta.55":
-  version "0.2.0-beta.55"
-  resolved "https://registry.yarnpkg.com/@acala-network/types/-/types-0.2.0-beta.55.tgz#08457a6cf0553090a77b28961d22b382421c441c"
-  integrity sha512-uD8QrhuSUiIz70YDxJh1o3HTlvtDBIuWGaEBiXYyzVqonZz2I+frBhNdPXVuiGSNqRAED348DGLGSt2waZbPOA==
+"@acala-network/types@^0.2.0-beta.58":
+  version "0.2.0-beta.58"
+  resolved "https://registry.yarnpkg.com/@acala-network/types/-/types-0.2.0-beta.58.tgz#5e4099df618f7babe38df09b3281253ce7238ab9"
+  integrity sha512-AI467SpyoYBlH10lpKrg5Cct2iq5LeN9RzIudIzBo++A/ubE9mAACNtOmRc7+zc8l/0Zh6p7uq/gdTEFYqWq3Q==
   dependencies:
     "@babel/runtime" "^7.10.2"
-    "@open-web3/orml-types" "^0.3.0-beta.19"
+    "@open-web3/api-mobx" "^0.3.0-beta.29"
+    "@open-web3/orml-types" "^0.3.0-beta.29"
     "@polkadot/api" "^1.18.1"
     "@polkadot/typegen" "^1.18.1"
     "@polkadot/types" "^1.18.1"
@@ -237,6 +238,17 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@open-web3/api-mobx@^0.3.0-beta.29":
+  version "0.3.0-beta.30"
+  resolved "https://registry.yarnpkg.com/@open-web3/api-mobx/-/api-mobx-0.3.0-beta.30.tgz#480e03b59212039ac43b743a163555153f7b56e5"
+  integrity sha512-Z0WRNB4v+Ny8tI0dbBn0Embe9nUTOqdrXaSkZsO3DSWSIZUj67H7p1kDPVdSl9Aw6t8pVWH3d3wAD96OM/HzaA==
+  dependencies:
+    "@polkadot/api" "^1.23.1"
+    "@polkadot/types" "^1.23.1"
+    "@polkadot/util" "^2.8.1"
+    mobx "^5.15.4"
+    mobx-utils "^5.5.7"
+
 "@open-web3/orml-api-derive@^0.3.0-beta.19":
   version "0.3.0-beta.20"
   resolved "https://registry.yarnpkg.com/@open-web3/orml-api-derive/-/orml-api-derive-0.3.0-beta.20.tgz#46901b93a6ddd1cc17818843d5505f42de1a6bc1"
@@ -246,12 +258,10 @@
     memoizee "^0.4.14"
     rxjs "^6.5.5"
 
-"@open-web3/orml-types@^0.3.0-beta.19":
-  version "0.3.0-beta.20"
-  resolved "https://registry.yarnpkg.com/@open-web3/orml-types/-/orml-types-0.3.0-beta.20.tgz#981b0599c565afc447c096fefc7bc693c8e912a9"
-  integrity sha512-GXZvV31qwMLzLHuUn914il1SaXXIxdUQEnu72j25EELPG+glGUrpjiC6S/DavnE13et+zx4l8dj1biDXJlolvg==
-  dependencies:
-    "@babel/runtime" "^7.8.4"
+"@open-web3/orml-types@^0.3.0-beta.29":
+  version "0.3.0-beta.30"
+  resolved "https://registry.yarnpkg.com/@open-web3/orml-types/-/orml-types-0.3.0-beta.30.tgz#a795988fbc6027a7c8cb3fad62139dae38337341"
+  integrity sha512-DMUcAglH1wLUTqBf1qD0YVpW8Zoyu6MxEps/144mpBGwduSVV5FcD2sQ9GUeYXZ50weBJWd6Hx1w2QaNMltz1Q==
 
 "@openzeppelin/contracts-ethereum-package@^2.4.0":
   version "2.5.0"
@@ -431,6 +441,18 @@
   version "2.17.1"
   resolved "https://registry.yarnpkg.com/@polkadot/util/-/util-2.17.1.tgz#83c5a36d1b27317933fead7e9d245194175189ed"
   integrity sha512-izUCHzOCqhy/CtHWJaYNNQlRm4f8JBJp260XjOKQJ8RTUSz3hiRUvBJRTybHtvZon2bzkQNj0BNrUATgPjhUlw==
+  dependencies:
+    "@babel/runtime" "^7.10.4"
+    "@types/bn.js" "^4.11.6"
+    bn.js "^5.1.2"
+    camelcase "^5.3.1"
+    chalk "^4.1.0"
+    ip-regex "^4.1.0"
+
+"@polkadot/util@^2.8.1":
+  version "2.18.1"
+  resolved "https://registry.yarnpkg.com/@polkadot/util/-/util-2.18.1.tgz#81380f21e47f3c5657ef09be7c477a72838d35eb"
+  integrity sha512-0KAojJMR5KDaaobIyvHVuW9vBP5LG3S0vpRSovB4UPlGDok3ETJSm5lMhA0t2KM8C4gXGBakCotFVGSOvWGgjA==
   dependencies:
     "@babel/runtime" "^7.10.4"
     "@types/bn.js" "^4.11.6"
@@ -2465,6 +2487,16 @@ mkdirp@^0.5.0, mkdirp@^0.5.3:
   integrity sha512-NKmAlESf6jMGym1++R0Ra7wvhV+wFW63FaSOFPwRahvea0gMUcGUhVeAg/0BC0wiv9ih5NYPB1Wn1UEI1/L+xQ==
   dependencies:
     minimist "^1.2.5"
+
+mobx-utils@^5.5.7:
+  version "5.6.1"
+  resolved "https://registry.yarnpkg.com/mobx-utils/-/mobx-utils-5.6.1.tgz#b7d9184b7442fe704be367d4363a2e9961be28cc"
+  integrity sha512-bpTJzM8MXniGnXCZY+ImjPDqBKQ3+G3g/QFSPtNkH6HM3x14DAPqKH7No7NDyhbXBMv3FaVetsgnoEPozbi45Q==
+
+mobx@^5.15.4:
+  version "5.15.4"
+  resolved "https://registry.yarnpkg.com/mobx/-/mobx-5.15.4.tgz#9da1a84e97ba624622f4e55a0bf3300fb931c2ab"
+  integrity sha512-xRFJxSU2Im3nrGCdjSuOTFmxVDGeqOHL+TyADCGbT0k4HHqGmx5u2yaHNryvoORpI4DfbzjJ5jPmuv+d7sioFw==
 
 mock-fs@^4.1.0:
   version "4.12.0"

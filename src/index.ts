@@ -1,6 +1,7 @@
 import { options } from "@acala-network/api";
 import { ApiPromise, WsProvider } from "@polkadot/api";
-import { Keyring } from "@polkadot/keyring";
+import { Keyring, decodeAddress } from "@polkadot/keyring";
+import { u8aToHex } from "@polkadot/util"
 
 import { log, logEvents } from "./log";
 import { handleBitcoinDeposit } from "./ren";
@@ -27,15 +28,17 @@ const main = async () => {
     log(pair.address, account.data.free.toHuman());
 
     // Wait for bitcoin deposit and submit to RenVM.
-    const mintResponse = await handleBitcoinDeposit();
+    const mintResponse = await handleBitcoinDeposit(u8aToHex(decodeAddress(pair.address)));
 
     if (!mintResponse || !mintResponse.queryTxResult) {
         log("[ERROR] Missing ren_queryTx result.");
         return;
     }
 
+    console.log(mintResponse.queryTxResult)
+
     // Submit mint signature to substrate chain.
-    await (await sendTx(api.tx.renToken.mint(
+    await (await sendTx(api.tx.renVmBridge.mint(
         mintResponse.queryTxResult.autogen.phash,
         parseInt(mintResponse.queryTxResult.autogen.amount, 10),
         mintResponse.queryTxResult.autogen.nhash,
