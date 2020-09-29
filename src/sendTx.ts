@@ -18,24 +18,21 @@ const deferred = <T>() => {
 /**
  * Sign and send transaction to substrate chain.
  */
-export const sendTx = async (tx: SubmittableExtrinsic<"promise">, pair: KeyringPair, options?: Partial<SignatureOptions>) => {
+export const sendTx = async (tx: SubmittableExtrinsic<"promise">) => {
     let send: SubmittableResultSubscription<"promise">;
     const finalized = deferred<{ events: EventRecord[], blockHash: Hash, txHash: Hash }>();
     const inBlock = deferred<{ events: EventRecord[], blockHash: Hash, txHash: Hash }>();
-    const signed = await tx.signAsync(pair, options || {});
     log("[INFO] Sending transaction:", {
-        from: pair.address.toString(),
-        nonce: signed.nonce.toJSON(),
-        method: `${signed.method.sectionName}.${signed.method.methodName}`,
+        method: `${tx.method.sectionName}.${tx.method.methodName}`,
         args: tx.args.map(x => x.toHuman()).join(", "),
-        hash: signed.hash.toString(),
+        hash: tx.hash.toString(),
     });
-    send = signed.send(res => {
-        log(`[INFO] [${signed.hash.toHex().slice(0, 8)}...] ${res.status.toString()}`);
+    send = tx.send(res => {
+        log(`[INFO] [${tx.hash.toHex().slice(0, 8)}...] ${res.status.toString()}`);
         if (res.isInBlock) {
-            inBlock.resolve({ events: res.events, blockHash: res.status.asInBlock, txHash: signed.hash });
+            inBlock.resolve({ events: res.events, blockHash: res.status.asInBlock, txHash: tx.hash });
         } else if (res.isFinalized) {
-            finalized.resolve({ events: res.events, blockHash: res.status.asFinalized, txHash: signed.hash });
+            finalized.resolve({ events: res.events, blockHash: res.status.asFinalized, txHash: tx.hash });
         } else if (res.isError) {
             inBlock.reject(res.status.toJSON());
             finalized.reject(res.status.toJSON());

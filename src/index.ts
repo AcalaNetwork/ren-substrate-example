@@ -39,11 +39,12 @@ const main = async () => {
 
     // Submit mint signature to substrate chain.
     await (await sendTx(api.tx.renVmBridge.mint(
+        pair.address,
         mintResponse.queryTxResult.autogen.phash,
         parseInt(mintResponse.queryTxResult.autogen.amount, 10),
         mintResponse.queryTxResult.autogen.nhash,
         mintResponse.signature,
-    ), pair)).finalized;
+    ))).finalized;
 };
 
 main()
